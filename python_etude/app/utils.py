@@ -6,3 +6,8 @@ def saluer(nom: str) -> None:
     """
     print(f"Bonjour, {nom} !")
     
+    def addition_multiple(*args: int) -> int:
+        """
+        function to add multiple integers
+        """
+        return sum(args)

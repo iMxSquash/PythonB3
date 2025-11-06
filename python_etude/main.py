@@ -103,6 +103,77 @@ def main():
     joueur2 = Player("Bob")
     bataille = Battle(joueur1, joueur2)
     bataille.start_battle()
+    
+    #Les listes
+    # mutables
+    fruits = ["pomme", "banane", "cerise"]
+    listeVide = []
+
+    # acceder aux elements
+    print(f"Premier fruit: {fruits[0]}")
+
+    # modifier un element
+    fruits[1] = "orange"
+
+    #supprimer un element
+    del fruits[2]
+    print(f"Fruits apres suppression: {fruits}")
+
+    #boucler a travers les elements
+    for fruit in fruits:
+        print(f"Fruit: {fruit}")
+
+    # verifier l'existence d'un element
+    if "pomme" in fruits:
+        print("La pomme est dans la liste des fruits.")
+
+    # nombre d'elements
+    print(f"La liste contient {len(fruits)} fruits.")
+
+    # creer une liste d'entiers de 0 a 9
+    nombres = list(range(10))
+
+    # ajouter un element
+    fruits.append("kiwi")
+
+    # inserer un element a une position specifique
+    fruits.insert(1, "mangue")
+
+    # etendre la liste avec une autre liste
+    panier = ["raisins", "ananas"]
+
+    fruits.extend(panier)
+
+    #supprimer un element par valeur
+    fruits.remove("pomme")
+
+    # supprimer et retourner le dernier element
+    dernier_fruit = fruits.pop()
+
+    # decouper une sous-liste
+    sous_liste = fruits[1:3] # elements d'index 1 a 2
+    print(f"Sous-liste: {sous_liste}")
+
+    autre_sous_liste = fruits[:2] # premiers deux elements
+
+    autre_sous_liste2 = fruits[2:] # a partir de l'index 2 jusqu'a la fin
+
+    autre_sous_liste3 = fruits[1::2] # a partir de l'index 1, tous les deux elements
+
+    # les listes de listes (listes imbriquees)
+    matrice = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    for ligne in matrice:
+        for element in ligne:
+            print(f"Element: {element}")
+    # acceder a un element specifique
+    element = matrice[1][2] # 6
+
+    # modifier un element specifique
+    matrice[0][0] = 10  # change 1 en 10
 
 if __name__ == "__main__":
     main()
