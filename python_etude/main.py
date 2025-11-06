@@ -1,3 +1,4 @@
+from time import sleep
 from app.utils import *
 import sys
 import os
@@ -212,7 +213,44 @@ def main():
                 fileDiscovery(full_path, niveau + 2)
     
     fileDiscovery(".")
+
+    # fonction récursive qui permet d'afficher le contenu lettre par lettre sur la même ligne
+    def afficher_lettres(texte: str, index: int = 0, delai: float = 0.5) -> None:
+        """Affiche les lettres d'un texte une par une avec un délai.
+
+        Args:
+            texte (str): Le texte à afficher.
+            index (int, optional): L'index de la lettre à afficher. Defaults to 0.
+            delai (float, optional): Le délai entre chaque lettre. Defaults to 0.5.
+        """
+        if index < len(texte):
+            print(texte[index], end="", flush=True)
+            sleep(delai)
+            afficher_lettres(texte, index + 1, delai)
+            
+    afficher_lettres("Bonjour", delai=0.05)
     
+    def demande_chaussettes() -> int:
+        """Demande à l'utilisateur combien de paires de chaussettes il veut acheter.
+
+        Returns:
+            int: Le nombre de paires de chaussettes.
+        """
+        while True:
+            quantite_str = input(
+                f"Combien de paires de chaussettes voulez-vous acheter ? "
+            )
+            try:
+                quantite = int(quantite_str)
+                if quantite < 0:
+                    print("Veuillez entrer un nombre positif.")
+                else:
+                    return quantite
+            except ValueError:
+                print("Entrée invalide. Veuillez entrer un nombre entier.")
+                
+    nombre_chaussettes = demande_chaussettes()
+    print(f"Vous avez choisi d'acheter {nombre_chaussettes} paires de chaussettes.")
 
 if __name__ == "__main__":
     main()
