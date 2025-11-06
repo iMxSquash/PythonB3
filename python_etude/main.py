@@ -1,9 +1,11 @@
 from app.utils import *
 import sys
+import os
 from app.models.player import Player
 from bataille import Battle
 
 valeurGlobale = 1
+u = 5
 
 def ma_fonction():
     valeurLocale = 2
@@ -79,20 +81,20 @@ def main():
         case _:
             print("C'est un autre jour de la semaine.")
     
-    def chateau(h: int) -> int:
+    def chateau(h: int) -> None:
         print("*" * h)
         if h > 0:
             chateau(h - 1)
 
     chateau(10)
     
-    def chateau_2(h: int) -> int:
+    def chateau_2(h: int) -> None:
         for i in range(h, 0, -1):
             print("*" * i)
             
     chateau_2(10)
             
-    def chateau_3(h: int) -> int:
+    def chateau_3(h: int) -> None:
         while h > 0:
             print("*" * h)
             h -= 1
@@ -174,6 +176,43 @@ def main():
 
     # modifier un element specifique
     matrice[0][0] = 10  # change 1 en 10
+
+    def autre_fonction() -> None:
+        """Modifie une variable locale nommee 'u'."""
+        global u
+        print(f"Valeur locale de u dans autre_fonction: {u}")
+        u = 10  # ceci est maintenant la variable globale
+        print(f"Valeur locale de u dans autre_fonction: {u}")
+
+    autre_fonction()
+    
+    def decorateur(fonction):
+        def nouvelle_fonction(*args, **kwargs):
+            print("Avant d'appeler la fonction.")
+            resultat = fonction(*args, **kwargs)
+            print("Après avoir appelé la fonction.")
+            return resultat
+        return nouvelle_fonction
+
+    @decorateur
+    def dire_bonjour(nom: str) -> None:
+        print(f"Bonjour, {nom}!")
+        
+    dire_bonjour("Alice")
+    
+    # parcourir une arborescence de dossiers
+    def fileDiscovery(path: str, niveau: int = 0) -> None:
+        """
+        Parcourt récursivement un répertoire et affiche les fichiers qu'il contient.
+        """
+        for element in os.listdir(path):
+            full_path = os.path.join(path, element)
+            print(" " * niveau + f"{element}")
+            if os.path.isdir(full_path):
+                fileDiscovery(full_path, niveau + 2)
+    
+    fileDiscovery(".")
+    
 
 if __name__ == "__main__":
     main()
