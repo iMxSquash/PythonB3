@@ -1,5 +1,7 @@
 from app.utils import *
 import sys
+from app.models.player import Player
+from bataille import Battle
 
 valeurGlobale = 1
 
@@ -95,7 +97,12 @@ def main():
             print("*" * h)
             h -= 1
     
-    chateau_3(int(input("Entrez la hauteur du chateau: ")))
+    # chateau_3(int(input("Entrez la hauteur du chateau: ")))
+
+    joueur1 = Player("Alice")
+    joueur2 = Player("Bob")
+    bataille = Battle(joueur1, joueur2)
+    bataille.start_battle()
 
 if __name__ == "__main__":
     main()
