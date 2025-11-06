@@ -65,5 +65,37 @@ def main():
     print(f"{a} % {b} = {a % b}")
     print(f"{a} ** {b} = {a ** b}")
     
+    #match case
+    jour = "lundi"
+    match jour:
+        case "lundi":
+            print("C'est le premier jour de la semaine.")
+        case "mercredi":
+            print("C'est le milieu de la semaine.")
+        case "vendredi":
+            print("C'est presque le week-end.")
+        case _:
+            print("C'est un autre jour de la semaine.")
+    
+    def chateau(h: int) -> int:
+        print("*" * h)
+        if h > 0:
+            chateau(h - 1)
+
+    chateau(10)
+    
+    def chateau_2(h: int) -> int:
+        for i in range(h, 0, -1):
+            print("*" * i)
+            
+    chateau_2(10)
+            
+    def chateau_3(h: int) -> int:
+        while h > 0:
+            print("*" * h)
+            h -= 1
+    
+    chateau_3(int(input("Entrez la hauteur du chateau: ")))
+
 if __name__ == "__main__":
     main()
