@@ -1,7 +1,3 @@
 """
-Module contenant les modèles de données de l'application.
+Module contenant les modèles de données du jeu pierre feuille ciseaux.
 """
-
-from .boutique import Boutique
-
-__all__ = ['Boutique']

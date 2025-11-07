@@ -14,6 +14,7 @@ fi
 
 # Activer l'environnement virtuel
 echo "🔧 Activation de l'environnement virtuel..."
+sleep 10
 source .venv/bin/activate
 
 echo "✅ Environnement virtuel activé !"

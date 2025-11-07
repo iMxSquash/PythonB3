@@ -1,7 +1,4 @@
 """
-Module contenant les services métier de l'application.
+Module contenant les services du jeu pierre feuille ciseaux.
 """
 
-from .boutique_service import BoutiqueService
-
-__all__ = ['BoutiqueService']
