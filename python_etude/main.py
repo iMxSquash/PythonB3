@@ -251,6 +251,30 @@ def main():
                 
     nombre_chaussettes = demande_chaussettes()
     print(f"Vous avez choisi d'acheter {nombre_chaussettes} paires de chaussettes.")
+    
+    # ouvrir un flux sur un fichier
+    with open("./info.txt", "w", encoding="utf-8") as f:
+        f.write("Ceci est une ligne écrite dans le fichier.\n")
+        f.write("Voici une autre ligne.\n")
+        f.write("Fin du fichier.\n")
+        
+    notes = [15, 18, 12, 14, 19]
+    with open("./info.txt", "w", encoding="utf-8") as f:
+        for index, note in enumerate(notes):
+            f.write(f"étudiant {index + 1}: {note}\n")
+            
+    with open("./info.txt", "a", encoding="utf-8") as f:
+        f.write("étudiant 6: 17\n")
+        f.write("fin des notes\n")
+        
+    try: 
+        with open("./info.txt", "r", encoding="utf-8") as f:
+            contenu = f.read()
+            print("Contenu du fichier info.txt:")
+            print(contenu)
+    except FileNotFoundError:
+        print("Le fichier info.txt n'a pas été trouvé.")
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,7 @@
+étudiant 1: 15
+étudiant 2: 18
+étudiant 3: 12
+étudiant 4: 14
+étudiant 5: 19
+étudiant 6: 17
+fin des notes
