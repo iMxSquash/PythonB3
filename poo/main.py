@@ -2,6 +2,7 @@ from app.utils import utils
 from app.classes.Voiture import Voiture
 from app.classes.Ma_Classe import Ma_Classe
 from app.classes.Maths import Maths
+from app.classes.StaticMaths import StaticMath
 
 if __name__ == "__main__":
     voiture = Voiture("Toyota", "Corolla", 2020)
@@ -28,3 +29,9 @@ if __name__ == "__main__":
     print(f"Soustraction de {a} et {b} =", Maths.subtract(a, b))
     print(f"Multiplication de {a} et {b} =", Maths.multiply(a, b))
     print(f"Division de {a} et {b} =", Maths.divide(a, b))
+    
+    #classe statiquie qui ne peut pas être instanciée
+    try:
+        static_math_instance = StaticMath()
+    except TypeError as e:
+        print("Erreur lors de l'instanciation de StaticMath:", e)
