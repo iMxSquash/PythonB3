@@ -17,6 +17,8 @@ if __name__ == "__main__":
     
     personne.afficher_info()
     
+    print(  "\n" + "=" * 60 + "\n")
+    
     compte = CompteBancaire(personne, 500)
     
     compte.deposer(100)
@@ -27,6 +29,8 @@ if __name__ == "__main__":
     compte._CompteBancaire__enregistrer_transaction("Transaction via name mangling")
     
     compte.afficher_solde()
+    
+    print("\n" + "=" * 60 + "\n")
     
     rectangle = Rectangle(5, 3)
     
@@ -47,4 +51,4 @@ if __name__ == "__main__":
     except ValueError as e:
         print(f"❌ Erreur: {e}")
     
-    print("\n" + "=" * 60)
+    print("\n" + "=" * 60 + "\n")
