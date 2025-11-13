@@ -1,4 +1,5 @@
 from app.classes.Personne import Personne
+from app.classes.CompteBancaire import CompteBancaire
 
 if __name__ == "__main__":
     personne = Personne("Alice Dupont", 28)
@@ -14,3 +15,14 @@ if __name__ == "__main__":
     personne.numero_securite = "555-12-3456"
     
     personne.afficher_info()
+    
+    compte = CompteBancaire(personne, 500)
+    
+    compte.deposer(100)
+    
+    compte.afficher_solde()
+    compte._afficher_solde()
+    
+    compte._CompteBancaire__enregistrer_transaction("Transaction via name mangling")
+    
+    compte.afficher_solde()
