@@ -1,4 +1,4 @@
-from app.utils import utils
+from app.utils import utils, maths_utils
 from app.classes.Voiture import Voiture
 from app.classes.Ma_Classe import Ma_Classe
 from app.classes.Maths import Maths
