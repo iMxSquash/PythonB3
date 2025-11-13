@@ -35,4 +35,23 @@ __numéro_securite possède une valeur par defaut: "123-45-6789"
  - acceder directement sur l'objet aux methodes de l'instance
  - acceder via name mangling aux methodes privées
  - Afficher le solde
+ -----------------------------------------------------------
+ 
+ Creer une classe Rectangle
+ 
+ 2 props d'instance
+ __largeur
+ __hauteur
+ 
+ - creer les getters et setters pour ces deux propriétés
+ - Creer un getter qui retourne l'aire de ce rectangle
+ 
+ - creer une instance
+ - acceder aux props et les afficher
+ - Modifier les propriétés
+ - Afficher les props apres modification
+ - essayez d'affecter -3 à la prop __largeur
+ 
+ ----------------------------------------------------------
+ 
  
