@@ -10,6 +10,8 @@ from app.classes.UserRepository import UserRepository
 from app.classes.PaymentMethod import PaymentMethod
 from app.classes.Paypal import Paypal
 from app.classes.CreditCard import CreditCard
+from app.classes.PdfDocument import PdfDocument
+from app.classes.WordDocument import WordDocument
 
 
 if __name__ == "__main__":
@@ -90,3 +92,15 @@ if __name__ == "__main__":
         
     process_payment(Paypal(), 50)
     process_payment(CreditCard(), 30)
+    
+    pdf_doc = PdfDocument("Mon PDF", "Contenu du PDF", 10)
+    word_doc = WordDocument("Mon Word", "Contenu du Word", 500)
+    
+    pdf_doc.print_info()
+    print()
+    word_doc.print_info()
+    
+    from app.design_patern.singleton import Singleton
+    singleton1 = Singleton()
+    singleton2 = Singleton()
+    print(f"singleton1 is singleton2: {singleton1 is singleton2}")
