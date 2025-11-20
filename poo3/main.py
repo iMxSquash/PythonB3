@@ -7,6 +7,10 @@ from app.classes.IParle import IParle
 from app.classes.FileRepo import FileRepo
 from app.classes.InMemRepo import InMemRepo
 from app.classes.UserRepository import UserRepository
+from app.classes.PaymentMethod import PaymentMethod
+from app.classes.Paypal import Paypal
+from app.classes.CreditCard import CreditCard
+
 
 if __name__ == "__main__":
     voiture1 = Voiture("Toyota", "Corolla")
@@ -73,10 +77,16 @@ if __name__ == "__main__":
             
     repo1 = FileRepo("users.json")
     repo2 = InMemRepo()
-    print("=== Utilisation de FileRepo ===")
-    ajouter_des_users(repo1)
-    afficher_users(repo1)
+    # print("=== Utilisation de FileRepo ===")
+    # ajouter_des_users(repo1)
+    # afficher_users(repo1)
     
-    print("=== Utilisation de InMemRepo ===")
-    ajouter_des_users(repo2)
-    afficher_users(repo2)
+    # print("=== Utilisation de InMemRepo ===")
+    # ajouter_des_users(repo2)
+    # afficher_users(repo2)
+    
+    def process_payment(method: PaymentMethod, amount: float) -> None:
+        method.pay(amount)
+        
+    process_payment(Paypal(), 50)
+    process_payment(CreditCard(), 30)
